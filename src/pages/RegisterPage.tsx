@@ -3,6 +3,7 @@ import React from 'react';
 import Github from '/public/Github.svg';
 import Google from '/public/Google.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,48 +12,69 @@ const RegisterPage = () => {
     <div
       className={`flex min-h-screen min-w-full items-center justify-center ${inter.className}  bg-gray-900 text-white`}
     >
-      <div className="flex w-96 flex-col gap-6 rounded-lg bg-gray-800 p-8">
-        <span className="text-xl font-bold">Create your account</span>
-
+      <div className="flex w-96 flex-col gap-6 rounded-lg bg-gray-800 p-8 md:w-[576px] ">
+        <div>
+          <span className="text-xl font-bold">Create your account</span>
+          <p className="pt-2.5 text-sm">
+            Start your website in seconds. Already have an account?{' '}
+            <Link href="" className="text-blue-500">
+              Login here
+            </Link>
+          </p>
+        </div>
         <div className="flex flex-col gap-5">
-          <label className="flex flex-col gap-2">
-            <span>Email</span>
-            <input
-              className="rounded-lg bg-gray-700 px-4 py-3"
-              placeholder="name@example.com"
-              type="email"
-            />
-          </label>
-          <label className="flex flex-col gap-2">
-            <span>Password</span>
-            <input
-              className="rounded-lg bg-gray-700 px-4 py-3"
-              placeholder="••••••••••"
-              type="password"
-            />
-          </label>
-
-          {/*  */}
-          <label className="flex flex-col gap-2">
-            <span> Profile Picture</span>
-            <div className="rounded-lg border border-gray-700">
+          <div className="s md:flex md:justify-between md:gap-5 ">
+            <label className="flex flex-col gap-2 md:w-full">
+              <span>Email</span>
               <input
-                id="file"
-                type="file"
-                className="file: 
+                className="rounded-lg bg-gray-700 px-4 py-3"
+                placeholder="name@example.com"
+                type="email"
+                autoFocus
+              />
+            </label>
+            <label className="mt-5 flex flex-col gap-2 md:mt-0 md:w-full">
+              <span>Full Name</span>
+              <input
+                className="rounded-lg bg-gray-700 px-4 py-3"
+                placeholder="name@example.com"
+                type="email"
+                autoFocus
+              />
+            </label>
+          </div>
+          <div className="md: gap-5 md:flex md:justify-between">
+            <label className="flex flex-col gap-2 md:w-full">
+              <span>Password</span>
+              <input
+                className="rounded-lg bg-gray-700 px-4 py-3"
+                placeholder="••••••••••"
+                type="password"
+              />
+            </label>
+
+            {/*  */}
+            <label className="mt-5 flex flex-col gap-2 md:mt-0 md:w-full">
+              <span> Profile Picture</span>
+              <div className="rounded-lg border border-gray-700">
+                <input
+                  id="file"
+                  type="file"
+                  className="file: 
               w-full pr-2 file:mr-4
               file:rounded-l-lg file:border-none file:bg-gray-700 file:px-4
-              file:py-2 file:text-white
+              file:py-2 file:text-white md:file:py-3 md:file:text-sm
               "
-              />
-            </div>
-            <p
-              className="mt-1 text-sm text-gray-500 dark:text-gray-300"
-              id="file_input_help"
-            >
-              SVG, PNG, JPG or GIF (MAX. 800x400px).
-            </p>
-          </label>
+                />
+              </div>
+              <p
+                className="mt-1 text-xs text-gray-500 dark:text-gray-300"
+                id="file_input_help"
+              >
+                SVG, PNG, JPG or GIF (MAX. 800x400px).
+              </p>
+            </label>
+          </div>
 
           <button className="rounded-lg bg-blue-600 py-3">
             Create Account
